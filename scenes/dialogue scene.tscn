@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cd3a7m5rcmj66"]
+
+[ext_resource type="Script" uid="uid://dirarsm1a7sc0" path="res://codes/dialogue system.gd" id="1_8cdpf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pac1l"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 3
+
+[node name="Control" type="Control" unique_id=1790618192]
+custom_minimum_size = Vector2(75, 150)
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -482.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1305567955]
+custom_minimum_size = Vector2(132.35, 156.05)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -481.00003
+offset_top = 28.0
+offset_bottom = 156.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 13
+script = ExtResource("1_8cdpf")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1377954987]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pac1l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1837181824]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=518482397]
+layout_mode = 2
+text = "sdfasdfasdf
+"
+fit_content = true
