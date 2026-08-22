@@ -244,6 +244,9 @@ autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1010705323]
 position = Vector2(0, -9)
+collision_mask = 0
+collision_priority = 0.0
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=778912037]
 shape = SubResource("CapsuleShape2D_tuyoq")

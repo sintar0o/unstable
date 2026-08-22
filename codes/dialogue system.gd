@@ -12,11 +12,11 @@ var dialogue_active := false
 func _ready() -> void:
 	hide()
 
-func start_dialogue(new_speaker: String, new_lines: Array[String]) -> void:
+func start_dialogue( new_lines: Array[String]) -> void:
 	if new_lines.is_empty():
 		return
 
-	speaker_label.text = new_speaker
+	
 	current_lines = new_lines
 	line_index = 0
 	dialogue_active = true
