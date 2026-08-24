@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://b5dulwqay1q2i"]
 
 [ext_resource type="PackedScene" uid="uid://duvyk2ntqyq81" path="res://scenes/player.tscn" id="1_iosel"]
-[ext_resource type="Script" uid="uid://bxsc6fuf618ia" path="res://codes/movement.gd" id="2_5jlf6"]
 [ext_resource type="Script" uid="uid://bgbi7ju6jyd8y" path="res://codes/dialogue interactable.gd" id="2_dicxx"]
 [ext_resource type="PackedScene" uid="uid://cd3a7m5rcmj66" path="res://scenes/dialogue scene.tscn" id="4_gse23"]
 
 [node name="Node2D" type="Node2D" unique_id=591131548]
 
-[node name="plaer" parent="." unique_id=2107833909 node_paths=PackedStringArray("Dialogue_bubble") groups=["player"] instance=ExtResource("1_iosel")]
-position = Vector2(0, -1)
-script = ExtResource("2_5jlf6")
+[node name="CharacterBody2D" parent="." unique_id=1936550530 node_paths=PackedStringArray("Dialogue_bubble") instance=ExtResource("1_iosel")]
 Dialogue_bubble = NodePath("../Control")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1834682632]
@@ -19,6 +16,7 @@ zoom = Vector2(1.875, 1.875)
 [node name="Node2D2" parent="." unique_id=1070958681 node_paths=PackedStringArray("dialogue_box") groups=["npc"] instance=ExtResource("1_iosel")]
 position = Vector2(144, 3)
 script = ExtResource("2_dicxx")
+speaker_name = "Trader"
 dialogue_lines = Array[String](["hello this is renard", "sintaro - hi renard i feel like there is a chaos is about to occur here", "renard - yeah i have felt that too"])
 dialogue_box = NodePath("../Control")
 

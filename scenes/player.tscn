@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bnortbgberv8x" path="res://Eris Esra's Character Template 4.1/16x32/16x32 Run-Sheet.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://m8ht7h1hlfh1" path="res://Eris Esra's Character Template 4.1/16x32/run sheet mirrored.png" id="4_dqkch"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rlde5"]
+radius = 4.0
+height = 16.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 128, 32, 32)
@@ -228,25 +232,28 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuyoq"]
-radius = 3.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 4.0
 height = 16.0
 
-[node name="Node2D" type="Node2D" unique_id=2107833909]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1936550530]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=482835349]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045451547]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_rlde5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=657814726]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=112290787]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_l2721")
 animation = &"walk_left"
 autoplay = "idle"
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1010705323]
+[node name="Area2D" type="Area2D" parent="." unique_id=66415488]
 position = Vector2(0, -9)
-collision_mask = 0
+collision_mask = 2
 collision_priority = 0.0
 input_pickable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=778912037]
-shape = SubResource("CapsuleShape2D_tuyoq")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1823365306]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_qhqgy")
