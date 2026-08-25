@@ -1,27 +1,25 @@
 [gd_scene format=3 uid="uid://b5dulwqay1q2i"]
 
 [ext_resource type="PackedScene" uid="uid://duvyk2ntqyq81" path="res://scenes/player.tscn" id="1_iosel"]
-[ext_resource type="Script" uid="uid://bgbi7ju6jyd8y" path="res://codes/dialogue interactable.gd" id="2_dicxx"]
+[ext_resource type="Script" uid="uid://dsdatlu3lrbqy" path="res://codes/movementworking.gd" id="2_gse23"]
 [ext_resource type="PackedScene" uid="uid://cd3a7m5rcmj66" path="res://scenes/dialogue scene.tscn" id="4_gse23"]
 
 [node name="Node2D" type="Node2D" unique_id=591131548]
 
-[node name="CharacterBody2D" parent="." unique_id=1936550530 node_paths=PackedStringArray("Dialogue_bubble") instance=ExtResource("1_iosel")]
-Dialogue_bubble = NodePath("../Control")
+[node name="CharacterBody2D" parent="." unique_id=1936550530 node_paths=PackedStringArray("dialogue_bubble") groups=["player"] instance=ExtResource("1_iosel")]
+script = ExtResource("2_gse23")
+dialogue_bubble = NodePath("../dialogue bubble")
+
+[node name="dialogue bubble" parent="." unique_id=1790618192 instance=ExtResource("4_gse23")]
+offset_left = -132.0
+offset_top = -12.0
+offset_right = 350.0
+offset_bottom = 144.0
+dialogue_lines = Array[String](["gsfd", "sdfg"])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1834682632]
 position = Vector2(0, -1)
 zoom = Vector2(1.875, 1.875)
 
-[node name="Node2D2" parent="." unique_id=1070958681 node_paths=PackedStringArray("dialogue_box") groups=["npc"] instance=ExtResource("1_iosel")]
+[node name="Node2D2" parent="." unique_id=1070958681 groups=["npc", "npcc"] instance=ExtResource("1_iosel")]
 position = Vector2(144, 3)
-script = ExtResource("2_dicxx")
-speaker_name = "Trader"
-dialogue_lines = Array[String](["hello this is renard", "sintaro - hi renard i feel like there is a chaos is about to occur here", "renard - yeah i have felt that too"])
-dialogue_box = NodePath("../Control")
-
-[node name="Control" parent="." unique_id=1790618192 instance=ExtResource("4_gse23")]
-offset_left = 298.0
-offset_top = -254.0
-offset_right = 780.0
-offset_bottom = 125.0

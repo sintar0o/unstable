@@ -1,39 +1,28 @@
-# DialogueBox.gd
-class_name DialogueBox
 extends Control
+class_name DialogueBox
 
-@onready var speaker_label: Label = $SpeakerLabel
+
+#@onready var speaker_label: Label = $SpeakerLabel
 @onready var dialogue_text: RichTextLabel = $DialogueText
-
-var current_lines: Array[String] = []
-var line_index := 0
-var dialogue_active := false
+@export var dialogue_lines:Array[String]
+@onready var dialogue_active = false
+@onready var current_sentence:String
+@onready var sentence_index =0
 
 func _ready() -> void:
-	hide()
-
-func start_dialogue( new_lines: Array[String]) -> void:
-	if new_lines.is_empty():
-		return
-
 	
-	current_lines = new_lines
-	line_index = 0
-	dialogue_active = true
-	show()
-	show_current_line()
-
+	
+	pass
+	
 func _process(delta: float) -> void:
-	if dialogue_active and Input.is_action_just_pressed("advance_dialogue"):
-		advance_dialogue()
+	
+	pass
+	
+func dialogue_system() :
+	if dialogue_active == true :
+		current_sentence =dialogue_lines[sentence_index]
+		dialogue_text.text = current_sentence
+	if dialogue_active and Input.is_action_just_pressed("advance_dialogue") :
+		sentence_index +=1
 
-func show_current_line() -> void:
-	dialogue_text.text = current_lines[line_index]
-
-func advance_dialogue() -> void:
-	if line_index < current_lines.size() - 1:
-		line_index += 1
-		show_current_line()
-	else:
-		dialogue_active = false
-		hide()
+	pass

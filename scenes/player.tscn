@@ -233,8 +233,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 4.0
-height = 16.0
+radius = 9.0
+height = 28.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1936550530]
 
@@ -245,7 +245,7 @@ shape = SubResource("CapsuleShape2D_rlde5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=112290787]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_l2721")
-animation = &"walk_left"
+animation = &"walk_right"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=66415488]

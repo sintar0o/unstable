@@ -9,14 +9,14 @@ border_width_top = 3
 border_width_right = 4
 border_width_bottom = 3
 
-[node name="Control" type="Control" unique_id=1790618192]
+[node name="dialogue bubble" type="Control" unique_id=1790618192]
 custom_minimum_size = Vector2(75, 150)
 layout_mode = 3
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -482.0
+offset_left = -339.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_8cdpf")
@@ -35,7 +35,6 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_right = 14
 theme_override_constants/margin_bottom = 13
-script = ExtResource("1_8cdpf")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1377954987]
 layout_mode = 2
