@@ -11,9 +11,14 @@ height = 28.0
 
 [node name="Node2D" type="Node2D" unique_id=591131548]
 
+[node name="dialogue bubble" parent="." unique_id=1790618192 instance=ExtResource("4_gse23")]
+offset_left = -202.0
+offset_top = -75.0
+offset_bottom = 75.0
+
 [node name="CharacterBody2D" parent="." unique_id=1936550530 node_paths=PackedStringArray("dialogue_bubble") groups=["player"] instance=ExtResource("1_iosel")]
 script = ExtResource("2_5jlf6")
-dialogue_bubble = NodePath("../dialogue bubble")
+dialogue_bubble = NodePath("")
 
 [node name="Area2D2" type="Area2D" parent="CharacterBody2D" unique_id=2091070251]
 position = Vector2(0, -9)
@@ -24,13 +29,6 @@ input_pickable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D2" unique_id=720175491]
 position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_5jlf6")
-
-[node name="dialogue bubble" parent="." unique_id=1790618192 instance=ExtResource("4_gse23")]
-offset_left = -132.0
-offset_top = -12.0
-offset_right = 351.0
-offset_bottom = 144.0
-dialogue_lines = Array[String](["gsfd", "sdfg"])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1834682632]
 position = Vector2(0, -1)
