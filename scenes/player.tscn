@@ -232,10 +232,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 9.0
-height = 28.0
-
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1936550530]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045451547]
@@ -247,13 +243,3 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_l2721")
 animation = &"walk_right"
 autoplay = "idle"
-
-[node name="Area2D" type="Area2D" parent="." unique_id=66415488]
-position = Vector2(0, -9)
-collision_mask = 2
-collision_priority = 0.0
-input_pickable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1823365306]
-position = Vector2(0, -4)
-shape = SubResource("CapsuleShape2D_qhqgy")
