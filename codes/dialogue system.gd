@@ -3,18 +3,23 @@ class_name DialogueBox
 
 
 #@onready var speaker_label: Label = $SpeakerLabel
-@onready var dialogue_text: RichTextLabel = 	$MarginContainer/PanelContainer/VBoxContainer/RichTextLabel
-@export var dialogue_lines:Array[String]
+@export var Npc_dialogue: Npc_dia
+@onready var dialogue_text: RichTextLabel = $MarginContainer/PanelContainer/ScrollContainer/RichTextLabel
+@onready var dialogue_lines 
 @onready var dialogue_active = false
 @onready var current_sentence:String
 @onready var sentence_index =0
+@onready var scrollcontainer = $MarginContainer/PanelContainer/ScrollContainer
 
+
+	
 
 func _process(delta: float) -> void:
 	dialogue_system()
 
 	
 func dialogue_system() -> void:
+	dialogue_lines = Npc_dialogue.sentences_by_npc
 	if not dialogue_active:
 		return
 	current_sentence = dialogue_lines[sentence_index]

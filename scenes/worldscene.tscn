@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dsdatlu3lrbqy" path="res://codes/movementworking.gd" id="2_5jlf6"]
 [ext_resource type="PackedScene" uid="uid://7yreo535j7r1" path="res://scenes/npc.tscn" id="4_a0gsm"]
 [ext_resource type="PackedScene" uid="uid://cd3a7m5rcmj66" path="res://scenes/dialogue scene.tscn" id="4_gse23"]
+[ext_resource type="Script" uid="uid://6lj88ukc25cr" path="res://npc dialogue.gd" id="4_p0jcd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5jlf6"]
 radius = 9.0
@@ -11,14 +12,9 @@ height = 28.0
 
 [node name="Node2D" type="Node2D" unique_id=591131548]
 
-[node name="dialogue bubble" parent="." unique_id=1790618192 instance=ExtResource("4_gse23")]
-offset_left = -202.0
-offset_top = -75.0
-offset_bottom = 75.0
-
 [node name="CharacterBody2D" parent="." unique_id=1936550530 node_paths=PackedStringArray("dialogue_bubble") groups=["player"] instance=ExtResource("1_iosel")]
 script = ExtResource("2_5jlf6")
-dialogue_bubble = NodePath("")
+dialogue_bubble = NodePath("../Control")
 
 [node name="Area2D2" type="Area2D" parent="CharacterBody2D" unique_id=2091070251]
 position = Vector2(0, -9)
@@ -32,9 +28,26 @@ shape = SubResource("CapsuleShape2D_5jlf6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1834682632]
 position = Vector2(0, -1)
-zoom = Vector2(1.875, 1.875)
+zoom = Vector2(1.005, 1.005)
 
 [node name="npc" parent="." unique_id=2107833909 groups=["nps"] instance=ExtResource("4_a0gsm")]
 position = Vector2(112, -4)
+script = ExtResource("4_p0jcd")
+sentences_by_npc = Array[String](["fsadf", "asdf", "asdf"])
+
+[node name="npc2" parent="." unique_id=319105777 groups=["nps"] instance=ExtResource("4_a0gsm")]
+position = Vector2(-142, -202)
+script = ExtResource("4_p0jcd")
+sentences_by_npc = Array[String](["hello i can twerk", "ogboga"])
+
+[node name="Control" parent="." unique_id=1222452184 instance=ExtResource("4_gse23")]
+custom_minimum_size = Vector2(0, 96.095)
+anchors_preset = 11
+anchor_left = 1.0
+offset_left = 970.0
+offset_top = -536.0
+offset_right = 970.0
+offset_bottom = 454.0
+grow_horizontal = 0
 
 [connection signal="area_entered" from="CharacterBody2D/Area2D2" to="CharacterBody2D" method="_on_area_2d_2_area_entered"]
